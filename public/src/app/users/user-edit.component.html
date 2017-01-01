@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Edit</h1>
+  <form [formGroup]="editForm" (ngSubmit)="edit()">
+    <div class="form-group">
+      <label for="firstName">First name</label>
+      <input class="form-control" id="firstName" formControlName="firstName" [ngModel]="authenticationService.currentUser.firstName">
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last name</label>
+      <input class="form-control" id="lastName" formControlName="lastName" [ngModel]="authenticationService.currentUser.lastName">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input class="form-control" id="email" formControlName="email" [(ngModel)]="authenticationService.currentUser.email">
+    </div>
+    <button class="btn btn-success" type="submit">Save</button>
+  </form>
+</div>

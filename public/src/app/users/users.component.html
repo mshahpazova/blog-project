@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+
+    <section class="content">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="table-container">
+              <table class="table table-filter">
+                <tbody>
+                  <tr data-status="pagado" *ngFor="let user of users">
+                    <td>
+                      <div class="media">
+                        <a href="#" class="pull-left">
+                          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
+                        </a>
+                        <div class="media-body">
+                          <span class="media-meta pull-right">{{user.createdAt | date}}</span>
+                          <a [routerLink]="['/users/' + user.id]">
+                            <h4 class="title">
+                              {{user.firstName}} {{user.lastName}}
+                            </h4>
+                          </a>
+                          <p class="summary">{{user.username}}</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="content-footer">
+          <p>
+            Page © - 2016
+            <br> Powered By <a href="https://www.facebook.com/tavo.qiqe.lucero" target="_blank">TavoQiqe</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>

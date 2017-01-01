@@ -1,0 +1,9 @@
+/*styles for home content only*/
+
+.intro-header {
+  min-height: 600px;
+}
+
+.home-title {
+  color: #fff;
+}

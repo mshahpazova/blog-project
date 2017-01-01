@@ -1,0 +1,21 @@
+<br><br>
+<div class="container-fluid well span6">
+  <div class="row-fluid">
+    <div class="span2">
+      <img src="https://secure.gravatar.com/avatar/3b3be63a4c2a439b013787725dfce802?d=identicon&s=140&r=g&d=mm" class="img-circle">
+    </div>
+
+    <div class="span8">
+      <h3>{{user.firstName}} {{user.lastName}}</h3>
+      <h6>email: {{user.email}}</h6>
+      <h6>username: {{user.username}}</h6>
+      <a [routerLink]="['/users/' + user.id + '/posts']">
+        Posts
+       </a>
+    </div>
+
+    <div class="span2" *ngIf="isCurrent">
+      <a class="btn btn-primary" routerLink="/user-edit">Edit</a>
+    </div>
+  </div>
+</div>
