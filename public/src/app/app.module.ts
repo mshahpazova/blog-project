@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MarkdownToHtmlPipe } from 'markdown-to-html-pipe';
+
 /*
  * Platform and Environment providers/directives/pipes
  */
@@ -15,9 +17,10 @@ import { AppComponent } from './app.component';
 import { AuthenticationService } from './shared/authentication.service';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
+import { AboutComponent } from './about';
+import { CommentComponent } from './comments';
 import { HomeComponent } from './home';
 import { NavigationComponent } from './navigation/navigation.component';
-import { AboutComponent } from './about';
 import { PostsComponent,
          UserPostsComponent,
          PostFormComponent,
@@ -49,6 +52,7 @@ type StoreType = {
   declarations: [
     AppComponent,
     AboutComponent,
+    CommentComponent,
     HomeComponent,
     NavigationComponent,
     NoContentComponent,
@@ -61,7 +65,8 @@ type StoreType = {
     UserEditComponent,
     UserPostsComponent,
     UsersComponent,
-    XLarge
+    XLarge,
+    MarkdownToHtmlPipe
   ],
   imports: [ // import Angular's modules
     BrowserModule,

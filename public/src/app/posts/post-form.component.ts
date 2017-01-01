@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 import { PostsService } from './';
-// import { UsernameValidators } from './usernameValidators';
+
 @Component({
   selector: 'post-form',
   templateUrl: './post-form.component.html',
-  providers: [PostsService]
+  providers: [PostsService],
+  styleUrls: ['./post-form.component.css']
+
 })
 export class PostFormComponent {
   public createPostForm = this.fb.group({

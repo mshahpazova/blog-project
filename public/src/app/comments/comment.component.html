@@ -1,0 +1,38 @@
+<div class="media comment">
+  <a class="pull-left" href="#">
+    <img src="https://secure.gravatar.com/avatar/3b3be63a4c2a439b013787725dfce802?d=identicon&s=64&r=g&d=mm" class="img-circle">
+  </a>
+  <h4 class="media-heading">
+    <a href="/mustPointToProfilePage">
+      {{comment.author.firstName}} {{comment.author.lastName}}
+    </a>
+    <small>commented on {{ comment.createdAt | date: 'dd/MM/yyyy' }}</small>
+  </h4>
+  <div class="media-body">
+    <p>{{comment.text}}</p>
+    <div class="pull-right">
+      <button class="btn btn-info btn-sm">
+        See Replies
+      </button>
+      <button class="btn btn-success btn-sm">
+        Reply
+      </button>
+    </div>
+    <div class="well" *ngIf="isSeeRepliesClicked">
+        <form role="form">
+          <div class="form-group">
+            <textarea class="form-control"
+                      rows="2"
+                      [(ngModel)]="newCommentText" 
+                      [ngModelOptions]="{standalone: true}">
+            </textarea>
+          </div>
+          <button class="btn btn-primary"
+                  (click)="createComment(newCommentText)"  
+                  [disabled]="!newCommentText">
+            Reply
+          </button>
+        </form>
+      </div>
+  </div>
+</div>

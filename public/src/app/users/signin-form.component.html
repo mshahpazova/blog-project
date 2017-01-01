@@ -1,11 +1,14 @@
-<form [formGroup]="signinForm" (ngSubmit)="signin()">
-  <div class="form-group">
-    <label for="username">Username</label>
-    <input class="form-control" id="userName" formControlName="username">
-  </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input class="form-control" id="password" formControlName="password">
-  </div>
+<div class="container">
+  <h1>Sign in</h1>
+  <form [formGroup]="signinForm" (ngSubmit)="signin()">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input class="form-control" id="userName" formControlName="username">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input class="form-control" id="password" formControlName="password">
+    </div>
     <button class="btn btn-primary" type="submit">Signin</button>
-</form>
+  </form>
+</div>
