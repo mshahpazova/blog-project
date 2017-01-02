@@ -1,5 +1,6 @@
 const {Comment, User} = require('../models');
 const {handleMissing} = require('../utils/handlers');
+const _ = require('lodash');
 
 class CommentsController {
 
@@ -48,6 +49,7 @@ class CommentsController {
         attributes: ['id', 'firstName', 'lastName']
       }]
     })
+    .then(replies => _.orderBy(replies, reply => new Date(reply.createdAt), ['desc']))
     .then(replies => res.json(replies))
     .catch(err => next(err, req, res));
   }
@@ -57,8 +59,11 @@ class CommentsController {
     const authorId = req.session.user.id;
     const data = Object.assign(req.body, {parentId, authorId});
     Comment.create(data)
-           .then(comment => res.json(comment))
-           .catch(err => next(err, req, res));
+      .then(reply => reply.reload({
+        include: { association: Comment.associations.author }
+      }))
+      .then(comment => res.json(comment))
+      .catch(err => next(err, req, res));
   }
 }
 

@@ -9,7 +9,9 @@ module.exports = {
       },
 
       createdAt: {
-        type: Sequelize.DATE
+        type: 'TIMESTAMP',
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+        allowNull: false
       },
 
       updatedAt: {

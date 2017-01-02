@@ -28,7 +28,7 @@ export class PostDetailsComponent implements OnInit {
   createComment(text) {
     this.commentService.create(this.post['id'], text)
       .subscribe(comment => {
-        this.post['comments'].push(comment);
+        this.post['comments'].unshift(comment);
         this.newCommentText = '';
       });
   }

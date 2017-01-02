@@ -2,6 +2,7 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -18,9 +19,12 @@ import { AuthenticationService } from './shared/authentication.service';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { AboutComponent } from './about';
-import { CommentComponent } from './comments';
+import { CommentComponent } from './comments/comment.component';
 import { HomeComponent } from './home';
 import { NavigationComponent } from './navigation/navigation.component';
+import { OrderAlphabeticallyPipe } from './pipes/order-alphabetically.pipe';
+import { OrderByDatePipe } from './pipes/order-by-date-pipe';
+
 import { PostsComponent,
          UserPostsComponent,
          PostFormComponent,
@@ -66,7 +70,8 @@ type StoreType = {
     UserPostsComponent,
     UsersComponent,
     XLarge,
-    MarkdownToHtmlPipe
+    MarkdownToHtmlPipe,
+    OrderByDatePipe
   ],
   imports: [ // import Angular's modules
     BrowserModule,
