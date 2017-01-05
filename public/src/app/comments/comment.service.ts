@@ -9,8 +9,9 @@ export class CommentService {
     headers: this.headers,
     withCredentials: true
   });
-  private postUrl = 'http://localhost:3000/api/posts';
-  private commentsUrl = 'http://localhost:3000/api/comments';
+  private postUrl = process.env.API_URL + '/api/posts';
+  private commentsUrl = process.env.API_URL + '/api/comments';
+
   // GET api/comments/:parentId/replies
   constructor(private http: Http) { }
   create(postId, text) {

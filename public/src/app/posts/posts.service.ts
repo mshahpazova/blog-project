@@ -5,8 +5,8 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class PostsService {
-  private _postsUrl = 'http://localhost:3000/api/posts';
-  private usersUrl = 'http://localhost:3000/api/users';
+  private _postsUrl = process.env.API_URL + '/api/posts';
+  private usersUrl = process.env.API_URL + '/api/users';
   private headers = new Headers({ 'Content-Type': 'application/json' });
   private options = new RequestOptions({
     headers: this.headers,

@@ -43,7 +43,7 @@ app.use(cookieSession({
     maxAge: TWENTY_FOUR_HOURS
   }
 }));
-
+app.use(express.static('dist'));
 app.use(routes);
 app.use((req, res) => res.status(404).json({message: ROUTE_NOT_FOUND}));
 app.use((error, req, res, next) => {

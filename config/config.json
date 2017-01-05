@@ -20,10 +20,10 @@
   },
 
   "production": {
-    "username": "postgres",
-    "password": null,
-    "database": "blog_dev",
-    "host": "127.0.0.1",
+    "username": "ttxgtlby",
+    "password": "ij2Nn9Lp7gSGv7CKArAVYGOQoSnGZ_ly",
+    "database": "ttxgtlby",
+    "host": "elmer-02.db.elephantsql.com",
     "dialect": "postgres",
     "timezone": "Europe/Sofia"
   }
