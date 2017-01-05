@@ -5,8 +5,8 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class UsersService {
-  private _signupUserUrl = 'http://localhost:3000/authentication/signup';
-  private _signinUserUrl = 'http://localhost:3000/authentication/signin';
+  private _signupUserUrl = process.env.API_URL + '/authentication/signup';
+  private _signinUserUrl = process.env.API_URL + '/authentication/signin';
   private usersUrl = 'http://localhost:3000/api/users';
   private headers = new Headers({ 'Content-Type': 'application/json' });
   private requestOptions = new RequestOptions({

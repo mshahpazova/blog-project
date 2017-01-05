@@ -6,17 +6,19 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AuthenticationService {
   public currentUser = {};
-  private signupUserUrl = 'http://localhost:3000/authentication/signup';
-  private signinUserUrl = 'http://localhost:3000/authentication/signin';
-  private signoutUrl = 'http://localhost:3000/authentication/signout';
-  private usersUrl = 'http://localhost:3000/api/users';
-  private currentUserUrl = 'http://localhost:3000/authentication/current';
+  private signupUserUrl = process.env.API_URL + '/authentication/signup';
+  private signinUserUrl = process.env.API_URL + '/authentication/signin';
+  private signoutUrl = process.env.API_URL + '/authentication/signout';
+  private usersUrl = process.env.API_URL + '/api/users';
+  private currentUserUrl = process.env.API_URL + '/authentication/current';
   private headers = new Headers({ 'Content-Type': 'application/json' });
   private requestOptions = new RequestOptions({
     headers: this.headers,
     withCredentials: true
   });
   constructor(private http: Http) {
+    console.log(process.env);
+    debugger;
     this.getCurrentUser().subscribe(user => this.currentUser = user);
   }
 
