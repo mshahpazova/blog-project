@@ -9,7 +9,8 @@
     "migrate": "node ./node_modules/sequelize-cli/bin/sequelize db:migrate",
     "migrate:undo:all": "node ./node_modules/sequelize-cli/bin/sequelize db:migrate:undo:all",
     "test": "NODE_ENV=test LOG4JS_CONFIG=config/log4js_test.json mocha --reporter spec",
-    "migrate:test": "NODE_ENV=test npm run migrate:undo:all && NODE_ENV=test npm run migrate"
+    "migrate:test": "NODE_ENV=test npm run migrate:undo:all && NODE_ENV=test npm run migrate",
+    "postinstall": "npm run migrate"
   },
   "repository": {
     "type": "git",
