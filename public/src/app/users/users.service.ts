@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 export class UsersService {
   private _signupUserUrl = process.env.API_URL + '/authentication/signup';
   private _signinUserUrl = process.env.API_URL + '/authentication/signin';
-  private usersUrl = 'http://localhost:3000/api/users';
+  private usersUrl = process.env.API_URL + '/api/users';
   private headers = new Headers({ 'Content-Type': 'application/json' });
   private requestOptions = new RequestOptions({
     headers: this.headers,
@@ -16,6 +16,7 @@ export class UsersService {
   constructor(private http: Http) { }
 
   getUsers() {
+    console.log('GAGAGA');
     return this.http.get(this.usersUrl, this.requestOptions).map(res => res.json());
   }
 
