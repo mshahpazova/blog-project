@@ -16,6 +16,7 @@ export class UsersService {
   constructor(private http: Http) { }
 
   getUsers() {
+    console.log('GAGAGA');
     return this.http.get(this.usersUrl, this.requestOptions).map(res => res.json());
   }
 
