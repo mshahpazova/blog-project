@@ -1,6 +1,24 @@
 /*styles for home content only*/
 
 .intro-header {
+  background-image: url('https://s-media-cache-ak0.pinimg.com/originals/8a/3d/63/8a3d63b216c41d9ccd6feb29e37bd8cc.jpg');
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  padding: 0 auto;
+  left: 300;
+}
+
+.home-header {
+  font-family: Papyrus, fantasy;
+  /*font-size: 24px;*/
+  text-align: center;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  /*line-height: 26.4px;*/
+}
+
+.intro-header {
   min-height: 600px;
 }
 
